@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.JDesktopPane;
+import javax.swing.JScrollBar;
 
 public class SemesterAvg {
 
@@ -82,7 +84,7 @@ public class SemesterAvg {
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(257, 35, 146, 121);
+		lblNewLabel_1.setBounds(262, 32, 146, 121);
 		frame.getContentPane().add(lblNewLabel_1);
 	}
 }
