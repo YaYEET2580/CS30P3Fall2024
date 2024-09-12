@@ -49,9 +49,9 @@ public class LatinPlantNames {
 		lblNewLabel.setBounds(51, 11, 126, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(80, 69, 46, 14);
-		frame.getContentPane().add(lblNewLabel_1);
+		JLabel latinName = new JLabel("");
+		latinName.setBounds(80, 69, 46, 14);
+		frame.getContentPane().add(latinName);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"basil", "lavender", "parsley", "peppermint", "saffron", "sage"}));
@@ -59,8 +59,23 @@ public class LatinPlantNames {
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				String plantName = (String)comboBox.getSelectedItem();
 				
-			
+				if (plantName == "basil") {
+					latinName.setText("Ocimum");
+				}
+				else if (plantName == "lavender") {
+					
+				}
+				else if (plantName == "parsley") {
+					
+				}
+				else if (plantName == "peppermint") {
+					
+				}
+				else if (plantName == "lavender") {
+	
+				}
 			}
 		});
 		comboBox.setBounds(51, 36, 103, 22);
