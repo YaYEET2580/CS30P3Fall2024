@@ -50,36 +50,39 @@ public class LatinPlantNames {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel latinName = new JLabel("");
-		latinName.setBounds(80, 69, 46, 14);
+		latinName.setBounds(51, 69, 103, 14);
 		frame.getContentPane().add(latinName);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"basil", "lavender", "parsley", "peppermint", "saffron", "sage"}));
-		comboBox.setToolTipText("basil, lavender, parsley, peppermint, saffron, sage");
-		comboBox.addActionListener(new ActionListener() {
+		JComboBox plants = new JComboBox();
+		plants.setModel(new DefaultComboBoxModel(new String[] {"basil", "lavender", "parsley", "peppermint", "saffron", "sage"}));
+		plants.setToolTipText("basil, lavender, parsley, peppermint, saffron, sage");
+		plants.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String plantName = (String)comboBox.getSelectedItem();
+				String plantName = (String)plants.getSelectedItem();
 				
 				if (plantName == "basil") {
 					latinName.setText("Ocimum");
 				}
 				else if (plantName == "lavender") {
-					
+					latinName.setText("Lavandula spica");
 				}
 				else if (plantName == "parsley") {
-					
+					latinName.setText("Apium");
 				}
 				else if (plantName == "peppermint") {
-					
+					latinName.setText("Mentha piperita");
 				}
-				else if (plantName == "lavender") {
-	
+				else if (plantName == "saffron") {
+					latinName.setText("Crocus");
+				}
+				else if (plantName == "sage") {
+					latinName.setText("Salvia");
 				}
 			}
 		});
-		comboBox.setBounds(51, 36, 103, 22);
-		frame.getContentPane().add(comboBox);
+		plants.setBounds(51, 36, 103, 22);
+		frame.getContentPane().add(plants);
 		
 		
 	}
