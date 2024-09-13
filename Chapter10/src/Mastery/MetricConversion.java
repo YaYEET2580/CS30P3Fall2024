@@ -71,8 +71,7 @@ public class MetricConversion {
 				}
 				else if (metricConversion == "pounds to kilograms (lbs to kg)") {
 					display.setText("1 pound = 0.4536 kilograms");
-	
-}
+			}
 				
 			}
 		});
