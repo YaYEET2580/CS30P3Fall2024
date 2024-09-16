@@ -117,7 +117,7 @@ public class Demo2 {
 		panel.add(display);
 		
 		JLabel images = new JLabel("");
-		images.setBounds(10, 244, 327, 178);
+		images.setBounds(0, 244, 327, 178);
 		panel.add(images);
 		
 		JButton submitButton = new JButton("SUBMIT");
