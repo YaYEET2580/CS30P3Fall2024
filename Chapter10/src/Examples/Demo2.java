@@ -19,6 +19,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JSlider;
+import javax.swing.JSeparator;
 
 public class Demo2 {
 
