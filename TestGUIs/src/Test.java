@@ -31,6 +31,15 @@ import java.awt.Scrollbar;
 import java.awt.TextField;
 import java.awt.TextArea;
 import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JToggleButton;
+import javax.swing.JCheckBox;
+import javax.swing.JDesktopPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.ButtonGroup;
+import java.awt.Canvas;
 
 public class Test {
 
@@ -64,9 +73,11 @@ public class Test {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 790, 658);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 11, 414, 239);
+		frame.getContentPane().add(panel);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 	}
