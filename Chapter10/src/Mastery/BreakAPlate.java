@@ -9,7 +9,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
-import java.util.Random;
 import java.awt.event.ActionEvent;
 
 public class BreakAPlate {
@@ -43,8 +42,13 @@ public class BreakAPlate {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		String firstPrize = "tiger plush";
+		String secondPrize = "sticker";
+		GameBooth breakAPlate;
 		
 		ImageIcon plates = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\plates.gif");
+		
+		breakAPlate = new GameBooth(0, firstPrize, secondPrize);
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 624, 427);
@@ -68,11 +72,10 @@ public class BreakAPlate {
 		JButton play = new JButton("PLAY");
 		play.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Random random = new Random();
-				int upperbound = 3;
-				int randomizer = random.nextInt(upperbound);
+				String eName = e.getActionCommand();
+				String prize;
 				
-				plate.setIcon(plates);
+				
 				
 				
 			}

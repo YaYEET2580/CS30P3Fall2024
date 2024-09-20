@@ -12,10 +12,14 @@ import java.awt.event.MouseEvent;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 public class LocalBankGUI {
 
 	private JFrame frame;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -45,54 +49,23 @@ public class LocalBankGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 450, 515);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(10, 11, 414, 22);
+		frame.getContentPane().add(comboBox);
+		
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 11, 414, 239);
+		panel.setBounds(10, 44, 414, 421);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Deposit");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton.setBounds(54, 72, 89, 23);
-		panel.add(btnNewButton);
-		
-		JButton btnWithdraw = new JButton("Withdrawal");
-		btnWithdraw.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnWithdraw.setBounds(252, 72, 89, 23);
-		panel.add(btnWithdraw);
-		
-		JButton btnCheckBalance = new JButton("Check balance");
-		btnCheckBalance.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnCheckBalance.setBounds(141, 72, 113, 23);
-		panel.add(btnCheckBalance);
-		
-		JButton btnNewButton_3 = new JButton("Add an account");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_3.setBounds(54, 106, 128, 23);
-		panel.add(btnNewButton_3);
-		
-		JButton btnNewButton_4 = new JButton("Remove an account");
-		btnNewButton_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_4.setBounds(213, 106, 128, 23);
-		panel.add(btnNewButton_4);
+		textField = new JTextField();
+		textField.setBounds(10, 11, 86, 20);
+		panel.add(textField);
+		textField.setColumns(10);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
