@@ -72,10 +72,12 @@ public class BreakAPlate {
 		JButton play = new JButton("PLAY");
 		play.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String eName = e.getActionCommand();
+				String eventName = e.getActionCommand();
 				String prize;
 				
-				
+				if (eventName == "PLAY") {
+					prize = breakAPlate.start();
+				}
 				
 				
 			}

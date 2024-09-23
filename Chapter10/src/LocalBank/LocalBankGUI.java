@@ -1,4 +1,4 @@
-package Mastery;
+package LocalBank;
 
 import java.awt.EventQueue;
 
