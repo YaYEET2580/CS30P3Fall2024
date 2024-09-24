@@ -66,7 +66,7 @@ public class LocalBankGUI {
 		
 		
 		accountNumber = new JTextField();
-		accountNumber.setEditable(false);
+		accountNumber.setEnabled(false);
 		accountNumber.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -80,10 +80,11 @@ public class LocalBankGUI {
 		accountNumber.setColumns(10);
 		
 		enterAmount = new JTextField();
-		enterAmount.setEditable(false);
+		enterAmount.setEnabled(false);
 		enterAmount.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				enterAmount.setText(null);
 			}
 		});
 		enterAmount.setText("Enter Amount");
@@ -93,7 +94,13 @@ public class LocalBankGUI {
 		frame.getContentPane().add(enterAmount);
 		
 		firstName = new JTextField();
-		firstName.setEditable(false);
+		firstName.setEnabled(false);
+		firstName.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				firstName.setText(null);
+			}
+		});
 		firstName.setText("First Name");
 		firstName.setForeground(Color.LIGHT_GRAY);
 		firstName.setColumns(10);
@@ -101,7 +108,13 @@ public class LocalBankGUI {
 		frame.getContentPane().add(firstName);
 		
 		lastName = new JTextField();
-		lastName.setEditable(false);
+		lastName.setEnabled(false);
+		lastName.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lastName.setText(null);
+			}
+		});
 		lastName.setText("Last Name");
 		lastName.setForeground(Color.LIGHT_GRAY);
 		lastName.setColumns(10);
@@ -109,7 +122,13 @@ public class LocalBankGUI {
 		frame.getContentPane().add(lastName);
 		
 		beginningBalance = new JTextField();
-		beginningBalance.setEditable(false);
+		beginningBalance.setEnabled(false);
+		beginningBalance.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				beginningBalance.setText(null);
+			}
+		});
 		beginningBalance.setText("Beginning Balance");
 		beginningBalance.setForeground(Color.LIGHT_GRAY);
 		beginningBalance.setColumns(10);
@@ -129,24 +148,46 @@ public class LocalBankGUI {
 		bankActivities.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (bankActivities.getSelectedItem().equals("Deposit")) {
-					accountNumber.setEditable(true);
-					enterAmount.setEditable(true);
+					accountNumber.setEnabled(true);
+					enterAmount.setEnabled(true);
+					beginningBalance.setEnabled(false);
+					firstName.setEnabled(false);
+					lastName.setEnabled(false);
 					accountNumber.setForeground(Color.red);
 					enterAmount.setForeground(Color.red);
 				}
 				else if (bankActivities.getSelectedItem().equals("Withdrawal")) {
-					accountNumber.setEditable(true);
-					enterAmount.setEditable(true);
+					accountNumber.setEnabled(true);
+					enterAmount.setEnabled(true);
+					beginningBalance.setEnabled(false);
+					firstName.setEnabled(false);
+					lastName.setEnabled(false);
 					accountNumber.setForeground(Color.red);
 					enterAmount.setForeground(Color.red);
 					
 				}
 				else if (bankActivities.getSelectedItem().equals("Check balance")) {
-					accountNumber.setEditable(false);
-					enterAmount.setEditable(false);
+					accountNumber.setEnabled(false);
+					enterAmount.setEnabled(false);
+					beginningBalance.setEnabled(false);
+					firstName.setEnabled(false);
+					lastName.setEnabled(false);
 					accountNumber.setForeground(Color.red);
 					enterAmount.setForeground(Color.red);
 				}
+				
+				else if (bankActivities.getSelectedItem().equals("Add account")) {
+					accountNumber.setEnabled(false);
+					enterAmount.setEnabled(false);
+					beginningBalance.setEnabled(true);
+					firstName.setEnabled(true);
+					lastName.setEnabled(true);
+					firstName.setForeground(Color.red);
+					lastName.setForeground(Color.red);
+					beginningBalance.setForeground(Color.red);
+					
+				}
+				
 			}
 		});
 		bankActivities.setModel(new DefaultComboBoxModel(new String[] {"Select an action", "Deposit", "Withdrawal", "Check balance", "Add account", "Remove account"}));
