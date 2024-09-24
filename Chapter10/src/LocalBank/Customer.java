@@ -10,7 +10,7 @@ public class Customer {
 	 
 	 public String toString() {
 		 String custString;
-		 custString = firstName + " " + lastName + "\n";
+		 custString = " " + firstName + " " + lastName + "\n";
 		 return(custString);
 	 }
 

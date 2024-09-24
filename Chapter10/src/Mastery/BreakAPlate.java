@@ -43,10 +43,10 @@ public class BreakAPlate {
 	 */
 	private void initialize() {
 		ImageIcon plates = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\plates.gif");
-		ImageIcon platesAllBroken = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\plates_all_broken.gif");
-		ImageIcon platesTwoBroken = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\plates_two_broken.gif");
-		ImageIcon sticker = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\sticker.gif");
-		ImageIcon tigerPlush = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\tiger_plush.gif");
+		ImageIcon platesAllBroken = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\plates_all_broken.gif");
+		ImageIcon platesTwoBroken = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\plates_two_broken.gif");
+		ImageIcon sticker = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\sticker.gif");
+		ImageIcon tigerPlush = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\tiger_plush.gif");
 		
 		ImageIcon firstPrize = tigerPlush;
 		ImageIcon secondPrize = sticker;
@@ -69,10 +69,11 @@ public class BreakAPlate {
 		
 		JLabel plate = new JLabel("");
 		plate.setBounds(128, 46, 310, 110);
-		plate.setIcon(plates);
+		plate.setIcon(new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\plates.gif"));
 		panel.add(plate);
 		
 		JLabel display = new JLabel("");
+		display.setIcon(null);
 		display.setBounds(184, 245, 201, 110);
 		panel.add(display);
 		

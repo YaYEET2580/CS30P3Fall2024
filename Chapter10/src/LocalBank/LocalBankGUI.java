@@ -66,6 +66,7 @@ public class LocalBankGUI {
 		
 		
 		accountNumber = new JTextField();
+		accountNumber.setEditable(false);
 		accountNumber.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -79,6 +80,7 @@ public class LocalBankGUI {
 		accountNumber.setColumns(10);
 		
 		enterAmount = new JTextField();
+		enterAmount.setEditable(false);
 		enterAmount.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -91,6 +93,7 @@ public class LocalBankGUI {
 		frame.getContentPane().add(enterAmount);
 		
 		firstName = new JTextField();
+		firstName.setEditable(false);
 		firstName.setText("First Name");
 		firstName.setForeground(Color.LIGHT_GRAY);
 		firstName.setColumns(10);
@@ -98,6 +101,7 @@ public class LocalBankGUI {
 		frame.getContentPane().add(firstName);
 		
 		lastName = new JTextField();
+		lastName.setEditable(false);
 		lastName.setText("Last Name");
 		lastName.setForeground(Color.LIGHT_GRAY);
 		lastName.setColumns(10);
@@ -105,6 +109,7 @@ public class LocalBankGUI {
 		frame.getContentPane().add(lastName);
 		
 		beginningBalance = new JTextField();
+		beginningBalance.setEditable(false);
 		beginningBalance.setText("Beginning Balance");
 		beginningBalance.setForeground(Color.LIGHT_GRAY);
 		beginningBalance.setColumns(10);
@@ -124,13 +129,23 @@ public class LocalBankGUI {
 		bankActivities.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (bankActivities.getSelectedItem().equals("Deposit")) {
+					accountNumber.setEditable(true);
+					enterAmount.setEditable(true);
 					accountNumber.setForeground(Color.red);
 					enterAmount.setForeground(Color.red);
 				}
 				else if (bankActivities.getSelectedItem().equals("Withdrawal")) {
+					accountNumber.setEditable(true);
+					enterAmount.setEditable(true);
 					accountNumber.setForeground(Color.red);
 					enterAmount.setForeground(Color.red);
 					
+				}
+				else if (bankActivities.getSelectedItem().equals("Check balance")) {
+					accountNumber.setEditable(false);
+					enterAmount.setEditable(false);
+					accountNumber.setForeground(Color.red);
+					enterAmount.setForeground(Color.red);
 				}
 			}
 		});
