@@ -2,18 +2,22 @@ package Mastery;
 
 import java.util.*;
 
+import javax.swing.ImageIcon;
+
 public class GameBooth {
 
-	private double cost;
-	private String firstPrize, consolationPrize;
+	public double cost;
+	public ImageIcon firstPrize;
+	public ImageIcon consolationPrize;
 	
-	public GameBooth(double charge, String p1, String p2) {
+	public GameBooth(double charge) {
 		 cost = charge;
-		 firstPrize = p1;
-		 consolationPrize = p2;
+		 firstPrize = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\sticker.gif");
+		 consolationPrize = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\tiger_plush.gif");
 	}
-	 
-	public String start() {
+	
+
+	public ImageIcon start() {
 		int toss;
 		int successes = 0;
 		Random rand = new Random();

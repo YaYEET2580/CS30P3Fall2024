@@ -42,13 +42,20 @@ public class BreakAPlate {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		String firstPrize = "tiger plush";
-		String secondPrize = "sticker";
+		ImageIcon plates = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\plates.gif");
+		ImageIcon platesAllBroken = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\plates_all_broken.gif");
+		ImageIcon platesTwoBroken = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\plates_two_broken.gif");
+		ImageIcon sticker = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\sticker.gif");
+		ImageIcon tigerPlush = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\tiger_plush.gif");
+		
+		ImageIcon firstPrize = tigerPlush;
+		ImageIcon secondPrize = sticker;
 		GameBooth breakAPlate;
 		
-		ImageIcon plates = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\plates.gif");
 		
-		breakAPlate = new GameBooth(0, firstPrize, secondPrize);
+		
+		
+		breakAPlate = new GameBooth(0);
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 624, 427);
@@ -73,13 +80,27 @@ public class BreakAPlate {
 		play.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String eventName = e.getActionCommand();
-				String prize;
+				ImageIcon prize = null;
 				
 				if (eventName == "PLAY") {
-					prize = breakAPlate.start();
+					prize = (ImageIcon) breakAPlate.start();
+					if (prize.equals(firstPrize)) {
+						plate.setIcon(platesAllBroken);
+					}
+					else if (prize.equals(secondPrize)) {
+						plate.setIcon(platesTwoBroken);
+					}
+					display.setIcon(prize);
+					play.setText("Play Again");
+					play.setActionCommand("Play Again");
 				}
-				
-				
+				else if (eventName == "Play Again") {
+					plate.setIcon(plates);
+					display.setIcon(null);
+					play.setText("PLAY");
+					play.setActionCommand("PLAY");
+				}
+		
 			}
 		});
 		play.setFont(new Font("Tahoma", Font.PLAIN, 15));
