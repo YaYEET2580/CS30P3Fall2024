@@ -30,6 +30,8 @@ public class LocalBankGUI {
 	private JTextField firstName;
 	private JTextField lastName;
 	private JTextField beginningBalance;
+	
+	Bank easySave = new Bank();
 
 	/**
 	 * Launch the application.
@@ -66,7 +68,6 @@ public class LocalBankGUI {
 		
 		
 		accountNumber = new JTextField();
-		accountNumber.setEnabled(false);
 		accountNumber.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -80,7 +81,6 @@ public class LocalBankGUI {
 		accountNumber.setColumns(10);
 		
 		enterAmount = new JTextField();
-		enterAmount.setEnabled(false);
 		enterAmount.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -94,7 +94,6 @@ public class LocalBankGUI {
 		frame.getContentPane().add(enterAmount);
 		
 		firstName = new JTextField();
-		firstName.setEnabled(false);
 		firstName.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -108,7 +107,6 @@ public class LocalBankGUI {
 		frame.getContentPane().add(firstName);
 		
 		lastName = new JTextField();
-		lastName.setEnabled(false);
 		lastName.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -122,7 +120,6 @@ public class LocalBankGUI {
 		frame.getContentPane().add(lastName);
 		
 		beginningBalance = new JTextField();
-		beginningBalance.setEnabled(false);
 		beginningBalance.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -139,49 +136,27 @@ public class LocalBankGUI {
 		display.setBounds(10, 209, 414, 89);
 		frame.getContentPane().add(display);
 		
-		JButton transaction = new JButton("Process Transaction");
-		transaction.setBounds(148, 309, 146, 72);
-		frame.getContentPane().add(transaction);
-		frame.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{accountNumber, frame.getContentPane(), enterAmount, firstName, lastName, beginningBalance, display, transaction}));
+	
 		
 		JComboBox bankActivities = new JComboBox();
 		bankActivities.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (bankActivities.getSelectedItem().equals("Deposit")) {
-					accountNumber.setEnabled(true);
-					enterAmount.setEnabled(true);
-					beginningBalance.setEnabled(false);
-					firstName.setEnabled(false);
-					lastName.setEnabled(false);
 					accountNumber.setForeground(Color.red);
 					enterAmount.setForeground(Color.red);
 				}
 				else if (bankActivities.getSelectedItem().equals("Withdrawal")) {
-					accountNumber.setEnabled(true);
-					enterAmount.setEnabled(true);
-					beginningBalance.setEnabled(false);
-					firstName.setEnabled(false);
-					lastName.setEnabled(false);
+					
 					accountNumber.setForeground(Color.red);
 					enterAmount.setForeground(Color.red);
 					
 				}
 				else if (bankActivities.getSelectedItem().equals("Check balance")) {
-					accountNumber.setEnabled(false);
-					enterAmount.setEnabled(false);
-					beginningBalance.setEnabled(false);
-					firstName.setEnabled(false);
-					lastName.setEnabled(false);
-					accountNumber.setForeground(Color.red);
-					enterAmount.setForeground(Color.red);
+					
 				}
 				
 				else if (bankActivities.getSelectedItem().equals("Add account")) {
-					accountNumber.setEnabled(false);
-					enterAmount.setEnabled(false);
-					beginningBalance.setEnabled(true);
-					firstName.setEnabled(true);
-					lastName.setEnabled(true);
+					
 					firstName.setForeground(Color.red);
 					lastName.setForeground(Color.red);
 					beginningBalance.setForeground(Color.red);
@@ -193,5 +168,32 @@ public class LocalBankGUI {
 		bankActivities.setModel(new DefaultComboBoxModel(new String[] {"Select an action", "Deposit", "Withdrawal", "Check balance", "Add account", "Remove account"}));
 		bankActivities.setBounds(10, 11, 414, 32);
 		frame.getContentPane().add(bankActivities);
+		
+		JButton transaction = new JButton("Process Transaction");
+		transaction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String amount, message;
+				
+				if (bankActivities.getSelectedItem().equals("Deposit")) {
+					amount = enterAmount.getText();
+					message = easySave.transaction(1, accountNumber.getText(), Double.parseDouble(amount));
+				}
+				else if (bankActivities.getSelectedItem().equals("Withdrawal")) {
+					amount = enterAmount.getText();
+					message = easySave.transaction(2, accountNumber.getText(), Double.parseDouble(amount));
+				} 
+				else if (bankActivities.getSelectedItem().equals("Check balance")) {
+					message = easySave.checkBalance(accountNumber.getText());
+				}
+				else if (bankActivities.getSelectedItem().equals("Add account")) {
+					amount = beginningBalance.getText();
+					message = easySave.addAccount(firstName.getText(), lastName.getText(), Double.parseDouble(amount));
+					display.setText("New account ID is: " + message);
+				}
+			}
+		});
+		transaction.setBounds(148, 309, 146, 72);
+		frame.getContentPane().add(transaction);
+		frame.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{accountNumber, frame.getContentPane(), enterAmount, firstName, lastName, beginningBalance, display, transaction}));
 	}
 }
