@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.*;
 
 public class BreakAPlate {
 
@@ -42,20 +43,21 @@ public class BreakAPlate {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+
+		
+			
+
+	
+
+	
+		
+		
 		ImageIcon plates = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\plates.gif");
-		ImageIcon platesAllBroken = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\plates_all_broken.gif");
+		ImageIcon platesAllBroken = new ImageIcon("..\\Chapter10\\src\\Images\\BreakAPlate_Images\\plates_all_broken.gif");
 		ImageIcon platesTwoBroken = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\plates_two_broken.gif");
-		ImageIcon sticker = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\sticker.gif");
-		ImageIcon tigerPlush = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate_Images\\tiger_plush.gif");
+		ImageIcon sticker = GameBooth().consolationPrize;
+		ImageIcon tigerPlush = GameBooth().firstPrize;
 		
-		ImageIcon firstPrize = tigerPlush;
-		ImageIcon secondPrize = sticker;
-		GameBooth breakAPlate;
-		
-		
-		
-		
-		breakAPlate = new GameBooth(0);
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 624, 427);
@@ -80,11 +82,48 @@ public class BreakAPlate {
 		JButton play = new JButton("PLAY");
 		play.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				double cost;
+				ImageIcon firstPrize;
+				ImageIcon consolationPrize;
+				
+				public  GameBooth(double charge) {
+					 cost = charge;
+					 firstPrize = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\sticker.gif");
+					 consolationPrize = new ImageIcon("C:\\Users\\37168004\\git\\CS30P3Fall2024\\Chapter10\\src\\Images\\BreakAPlate%20Images\\tiger_plush.gif");
+				}
+				
+
+				public ImageIcon start() {
+					int toss;
+					int successes = 0;
+					Random rand = new Random();
+
+					
+					for (int i = 0; i < 3; i++) { 
+						toss = rand.nextInt(2);
+					if (toss == 1) {
+						successes += 1; 
+					}
+				}
+
+					
+					if (successes == 3) {
+						return(firstPrize);
+					} 
+					else {
+						return(consolationPrize);
+					}
+				}
+				
+				public double getCost() {
+					return cost;
+				}
+				
 				String eventName = e.getActionCommand();
 				ImageIcon prize = null;
 				
 				if (eventName == "PLAY") {
-					prize = (ImageIcon) breakAPlate.start();
+					prize = GameBooth.start();
 					if (prize.equals(firstPrize)) {
 						plate.setIcon(platesAllBroken);
 					}
@@ -103,6 +142,7 @@ public class BreakAPlate {
 				}
 		
 			}
+		}
 		});
 		play.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		play.setBounds(220, 184, 124, 45);

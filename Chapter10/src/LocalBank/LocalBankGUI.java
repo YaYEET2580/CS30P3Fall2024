@@ -177,6 +177,7 @@ public class LocalBankGUI {
 				if (bankActivities.getSelectedItem().equals("Deposit")) {
 					amount = enterAmount.getText();
 					message = easySave.transaction(1, accountNumber.getText(), Double.parseDouble(amount));
+					display.setText(message);
 				}
 				else if (bankActivities.getSelectedItem().equals("Withdrawal")) {
 					amount = enterAmount.getText();
@@ -190,6 +191,7 @@ public class LocalBankGUI {
 					message = easySave.addAccount(firstName.getText(), lastName.getText(), Double.parseDouble(amount));
 					display.setText("New account ID is: " + message);
 				}
+				
 			}
 		});
 		transaction.setBounds(148, 309, 146, 72);

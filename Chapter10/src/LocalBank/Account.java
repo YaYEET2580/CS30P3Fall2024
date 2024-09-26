@@ -15,7 +15,7 @@ public class Account {
 	 
 	 public Account(String ID) {
 		 balance = 0;
-		 customer = new Customer("", "");
+		 customer = new Customer(" ", " ");
 		 accountID = ID;
 	 }
 	 
