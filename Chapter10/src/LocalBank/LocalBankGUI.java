@@ -152,7 +152,7 @@ public class LocalBankGUI {
 					
 				}
 				else if (bankActivities.getSelectedItem().equals("Check balance")) {
-					
+					accountNumber.setForeground(Color.red);
 				}
 				
 				else if (bankActivities.getSelectedItem().equals("Add account")) {
@@ -161,6 +161,9 @@ public class LocalBankGUI {
 					lastName.setForeground(Color.red);
 					beginningBalance.setForeground(Color.red);
 					
+				}
+				else if (bankActivities.getSelectedItem().equals("Add account")) {
+					accountNumber.setForeground(Color.red);
 				}
 				
 			}
@@ -177,7 +180,6 @@ public class LocalBankGUI {
 				if (bankActivities.getSelectedItem().equals("Deposit")) {
 					amount = enterAmount.getText();
 					message = easySave.transaction(1, accountNumber.getText(), Double.parseDouble(amount));
-					display.setText(message);
 				}
 				else if (bankActivities.getSelectedItem().equals("Withdrawal")) {
 					amount = enterAmount.getText();
@@ -190,6 +192,10 @@ public class LocalBankGUI {
 					amount = beginningBalance.getText();
 					message = easySave.addAccount(firstName.getText(), lastName.getText(), Double.parseDouble(amount));
 					display.setText("New account ID is: " + message);
+				}
+				else if (bankActivities.getSelectedItem().equals("Remove account")) {
+					message = easySave.deleteAccount(accountNumber.getText());
+					display.setText(message);
 				}
 				
 			}
