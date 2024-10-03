@@ -40,7 +40,7 @@ public class MyFile2 {
 			}
 		}
 		else {
-			System.out.println("File is being kept and is staying the same.");
+			System.out.println("File is being kept and will stay the same.");
 		}
 
 	}
