@@ -28,6 +28,20 @@ public class MyFile2 {
     			System.err.println("IOException: " + e.getMessage());
     		}
 		}
+		
+		//Delete the file if user chooses
+		System.out.print("Would you like to (K)eep this file or (D)elete it?: ");
+		response = input.nextLine();
+		
+		if (response.equalsIgnoreCase("D")) {
+			//Delete
+			if(textFile.delete()) {
+				System.out.println("File successfully deleted.");
+			}
+		}
+		else {
+			System.out.println("File is being kept and is staying the same.");
+		}
 
 	}
 
