@@ -162,7 +162,7 @@ public class LocalBankGUI {
 					beginningBalance.setForeground(Color.red);
 					
 				}
-				else if (bankActivities.getSelectedItem().equals("Add account")) {
+				else if (bankActivities.getSelectedItem().equals("Remove account")) {
 					accountNumber.setForeground(Color.red);
 				}
 				
@@ -180,13 +180,16 @@ public class LocalBankGUI {
 				if (bankActivities.getSelectedItem().equals("Deposit")) {
 					amount = enterAmount.getText();
 					message = easySave.transaction(1, accountNumber.getText(), Double.parseDouble(amount));
+					display.setText(message);
 				}
 				else if (bankActivities.getSelectedItem().equals("Withdrawal")) {
 					amount = enterAmount.getText();
 					message = easySave.transaction(2, accountNumber.getText(), Double.parseDouble(amount));
+					display.setText(message);
 				} 
 				else if (bankActivities.getSelectedItem().equals("Check balance")) {
 					message = easySave.checkBalance(accountNumber.getText());
+					display.setText(message);
 				}
 				else if (bankActivities.getSelectedItem().equals("Add account")) {
 					amount = beginningBalance.getText();
@@ -200,7 +203,7 @@ public class LocalBankGUI {
 				
 			}
 		});
-		transaction.setBounds(148, 309, 146, 72);
+		transaction.setBounds(124, 309, 200, 72);
 		frame.getContentPane().add(transaction);
 		frame.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{accountNumber, frame.getContentPane(), enterAmount, firstName, lastName, beginningBalance, display, transaction}));
 	}

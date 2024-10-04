@@ -54,7 +54,7 @@ public class Account {
 		 
 		 accountString = accountID + "\n";
 		 accountString += customer.toString();
-		 accountString += "Current balance is " + money.format(balance);
+		 accountString += " Current balance is " + money.format(balance);
 		 return(accountString);
 
 	 }
