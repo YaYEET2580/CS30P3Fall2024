@@ -24,6 +24,7 @@ public class MyFile1 {
 		else {
 			System.out.println("File does not exists");
 		}
+		input.close();
 
 	}
 
