@@ -1,7 +1,7 @@
 package Skillbuilders;
 
 import java.io.*;
-import java.text.NumberFormat;
+import java.text.*;
 
 
 public class Stats1 {
