@@ -47,14 +47,14 @@ public class Stats1 {
 			
 			in.close();
 		}
-		catch (FileNotFoundException e) 
-        {
+		catch (FileNotFoundException e) {
 			System.out.println("File does not exist or could not be found.");
 			System.err.println("FileNotFoundException: " + e.getMessage());
 
         } 
 		catch (IOException e) {
-			
+			System.out.println("Problem reading file.");
+			System.err.println("IOException: " + e.getMessage());
 		}
 
 		

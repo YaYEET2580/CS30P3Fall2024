@@ -1,7 +1,7 @@
 package Skillbuilders;
 
 import java.io.*;
-import java.text.NumberFormat;
+import java.text.*;
 import java.util.*;
 
 public class Stats2 {
@@ -52,7 +52,7 @@ public class Stats2 {
 			System.out.println("The data that you have written is now in the file.");
 		} 
 		catch (IOException e) {
-			System.out.println("An error has occured.");
+			System.out.println("Problem reading file.");
 			System.err.println("IOException: " + e.getMessage());
 		}
 		
@@ -91,7 +91,7 @@ public class Stats2 {
 
         } 
 		catch (IOException e) {
-			System.out.println("An error has occured.");
+			System.out.println("Problem reading file.");
 			System.err.println("IOException: " + e.getMessage());
 		}
 		input.close();
