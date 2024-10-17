@@ -39,6 +39,7 @@ public class MetricConversion {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings("all")
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 300, 137);
@@ -52,6 +53,7 @@ public class MetricConversion {
 		JLabel display = new JLabel("");
 		display.setBounds(10, 73, 264, 14);
 		frame.getContentPane().add(display);
+		
 		
 		JComboBox conversionType = new JComboBox();
 		conversionType.setModel(new DefaultComboBoxModel(new String[] {"inches to centimeters (in to cm)", "feet to meters (ft to m)", "gallons to liters (gal to L)", "pounds to kilograms (lbs to kg)"}));
