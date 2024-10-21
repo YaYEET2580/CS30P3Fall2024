@@ -33,7 +33,7 @@ public class MySavings {
 		if (mySavings != null) {
 			try {
 				// Attempt to load previously saved PiggyBank data from the file "PiggyBank.dat"
-				instream = new ObjectInputStream(new FileInputStream("PiggyBank.dat"));
+				instream = new ObjectInputStream(new FileInputStream("text.txt"));
 				mySavings = (PiggyBank) instream.readObject();  // Read the object from file and cast it to PiggyBank
 			}
 			catch (IOException e) {
@@ -100,7 +100,7 @@ public class MySavings {
 			else if (choice == 7) {
 				// Save the current state of the PiggyBank to a file
 				try {
-					outstream = new ObjectOutputStream(new FileOutputStream("PiggyBank.dat"));
+					outstream = new ObjectOutputStream(new FileOutputStream("text.txt"));
 					outstream.writeObject(mySavings);  // Write the PiggyBank object to file
 					System.out.println("PiggyBank has been saved successfully.");
 					outstream.close();  // Close the output stream
