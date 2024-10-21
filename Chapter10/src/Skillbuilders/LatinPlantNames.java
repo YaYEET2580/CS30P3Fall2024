@@ -1,7 +1,6 @@
 package Skillbuilders;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
@@ -9,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 
+@SuppressWarnings("all")
 public class LatinPlantNames {
 
 	private JFrame frame;

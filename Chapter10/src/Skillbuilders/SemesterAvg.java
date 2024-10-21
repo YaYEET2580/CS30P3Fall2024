@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 
-
+@SuppressWarnings("all")
 public class SemesterAvg {
 
 	private JFrame frame;

@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JSlider;
 import javax.swing.JSeparator;
 
+@SuppressWarnings("all")
 public class Demo2 {
 
 	private JFrame frame;

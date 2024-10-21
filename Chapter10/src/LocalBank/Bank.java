@@ -1,8 +1,9 @@
 package LocalBank;
 
 import java.util.ArrayList;
-
+@SuppressWarnings("all")
 public class Bank {
+	
 	
 	public ArrayList accounts;
 	
