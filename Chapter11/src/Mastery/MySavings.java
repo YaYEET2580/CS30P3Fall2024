@@ -33,7 +33,7 @@ public class MySavings {
 		if (mySavings != null) {
 			try {
 				// Attempt to load previously saved PiggyBank data from the file "PiggyBank.dat"
-				instream = new ObjectInputStream(new FileInputStream("text.txt"));
+				instream = new ObjectInputStream(new FileInputStream("../Chapter11/src/Mastery/PiggyBank.dat"));
 				mySavings = (PiggyBank) instream.readObject();  // Read the object from file and cast it to PiggyBank
 			}
 			catch (IOException e) {
@@ -100,7 +100,7 @@ public class MySavings {
 			else if (choice == 7) {
 				// Save the current state of the PiggyBank to a file
 				try {
-					outstream = new ObjectOutputStream(new FileOutputStream("text.txt"));
+					outstream = new ObjectOutputStream(new FileOutputStream("../Chapter11/src/Mastery/PiggyBank.dat"));
 					outstream.writeObject(mySavings);  // Write the PiggyBank object to file
 					System.out.println("PiggyBank has been saved successfully.");
 					outstream.close();  // Close the output stream
@@ -127,5 +127,343 @@ public class MySavings {
 /* Screen Dump
 
 Case 1:
- 
- */
+	Welcome to the MySavings application!
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 1
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 1
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 1
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 1
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 1
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 1
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 1
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 1
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 1
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 6
+	
+	Your total is: $0.09
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 7
+	
+	PiggyBank has been saved successfully.
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 0
+	
+Case 2:
+	Welcome to the MySavings application!
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 4
+	
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 6
+	
+	Your total is: $3.75
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 7
+	
+	PiggyBank has been saved successfully.
+	
+	1. Add a penny
+	2. Add a nickel
+	3. Add a dime
+	4. Add a quarter
+	5. Withdraw money
+	6. Show total in bank
+	7. Save PiggyBank
+	0. Quit this application
+	Please enter your choice: 0
+
+
+
+  */
