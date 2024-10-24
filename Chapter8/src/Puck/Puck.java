@@ -1,5 +1,5 @@
 package Puck;
 
-public class Puck2 {
+public class Puck {
 
 }

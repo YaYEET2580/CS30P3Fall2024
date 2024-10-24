@@ -1,7 +1,6 @@
 package Puck;
 
-
-public abstract class Circle {
+public class Circle {
 	private static double PI = 3.14;
 	private double radius;
 		
