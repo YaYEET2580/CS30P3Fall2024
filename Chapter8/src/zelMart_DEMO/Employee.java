@@ -1,4 +1,4 @@
-package zelMart;
+package zelMart_DEMO;
 
 public abstract class Employee {
 	private String firstName, lastName;
