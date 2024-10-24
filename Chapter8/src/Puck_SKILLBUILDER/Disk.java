@@ -5,10 +5,10 @@ public class Disk extends Circle
 	private double thickness;
 	
 	
-	public Disk(double r, double t) 
+	public Disk(double radius, double thick) 
 	{
-		super(r);
-		thickness = t;
+		super(radius);
+		thickness = thick;
 	}
 	
 	public void setThickness(double newThickness) 
@@ -23,18 +23,18 @@ public class Disk extends Circle
 	
 	public double volume() 
 	{
-		double v;
+		double volume;
 		
-		v = super.area() * thickness;
-		return(v);
+		volume = super.area() * thickness;
+		return(volume);
 	}
 	
-	public boolean equals(Object obj) 
+	public boolean equals(Object object) 
 	{
-		Disk testObj = (Disk)obj;
+		Disk testObject = (Disk)object;
 		
-	 	if (testObj.getRadius() == super.getRadius() && 
-	 		testObj.getThickness() == thickness) {
+	 	if (testObject.getRadius() == super.getRadius() && 
+	 			testObject.getThickness() == thickness) {
 			return(true);
 		} else {
 			return(false);
