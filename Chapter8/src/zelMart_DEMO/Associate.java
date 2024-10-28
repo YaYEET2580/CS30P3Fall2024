@@ -1,7 +1,5 @@
 package zelMart_DEMO;
 
-
-
 public class Associate extends Employee
 {
 	
