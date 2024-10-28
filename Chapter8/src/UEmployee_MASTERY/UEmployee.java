@@ -5,11 +5,11 @@ public abstract class UEmployee
 	private String firstName, lastName;
 	private double salary;
 	
-	public UEmployee(String fn, String ln, double s)
+	public UEmployee(String fName, String lName, double sal)
 	{
-		firstName = fn;
-		lastName = ln;
-		salary = s;
+		firstName = fName;
+		lastName = lName;
+		salary = sal;
 	}
 	
 	public String getFirstName()
@@ -24,17 +24,17 @@ public abstract class UEmployee
 	{
 		return salary;
 	}
-	public void setFirstName(String fn)
+	public void setFirstName(String fName)
 	{
-		firstName = fn;
+		firstName = fName;
 	}
-	public void setLastName(String ln)
+	public void setLastName(String lName)
 	{
-		lastName = ln;
+		lastName = lName;
 	}
-	public void setSalary(double s)
+	public void setSalary(double sal)
 	{
-		salary = s;;
+		salary = sal;
 	}
 	
 	public String toString()
