@@ -1,6 +1,6 @@
 package Puck_SKILLBUILDER;
 
-public class Puck extends Disk
+public class Puck extends Disk implements Comparable
 {
 	public double minimumStandardWeight = 5;
 	public double maximumStandardWeight = 5.5;
@@ -9,10 +9,9 @@ public class Puck extends Disk
 	private double weight;
 	private boolean standard, youth;
 	
-	public Puck(double w)
+	public Puck()
 	{
 		super(1.5, 1);
-		weight = w;
 		
 		if(weight >= minimumStandardWeight && weight <= maximumStandardWeight)
 		{
@@ -31,6 +30,10 @@ public class Puck extends Disk
 	 	return(weight);
 	}
 	
+	public void setWeight(double w) {
+		weight = w;
+	}
+	
 	public String getDivision()
 	{
 		String div;
@@ -43,7 +46,7 @@ public class Puck extends Disk
 		{
 			div = "Puck is youth";
 		}
-		return div;
+		return(div);
 	}
 	
 	public  boolean equals(Object obj)
@@ -58,6 +61,14 @@ public class Puck extends Disk
 		{
 			return(false);
 		}
+	}
+	
+	public String toString() {
+		String puckString;
+		
+		puckString = "The puck has a weight of " + getWeight() + " and division is " + getDivision() + ".";
+		
+		return(puckString);
 	}
 
 }
