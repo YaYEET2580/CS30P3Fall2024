@@ -1,6 +1,8 @@
 package Puck_SKILLBUILDER;
 
+
 public class Puck extends Disk implements Comparable
+
 {
 	public double minimumStandardWeight = 5;
 	public double maximumStandardWeight = 5.5;
