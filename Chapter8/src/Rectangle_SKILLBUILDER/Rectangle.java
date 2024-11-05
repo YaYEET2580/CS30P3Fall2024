@@ -5,6 +5,7 @@ public abstract class Rectangle implements Comparable {
 	private double length;
 	private double width;
 
+
 	public Rectangle() {
 		length = 1;
 		width = 1;
@@ -77,19 +78,5 @@ public abstract class Rectangle implements Comparable {
 		}
 	}
 	
-	public int compareToArea(Object areaRect) {
-		Rectangle testAreaRectangle = (Rectangle)areaRect;
-		
-		if (rectangleArea < testAreaRectangle.area()) {
-			return -1;
-		}
-		else if (rectangleArea < testAreaRectangle.area()) {
-			return 0;
-		}
-		else {
-			return 1;
-		}
-		
-	}
 
 }
