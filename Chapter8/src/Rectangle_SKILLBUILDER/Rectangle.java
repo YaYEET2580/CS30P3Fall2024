@@ -1,5 +1,6 @@
 package Rectangle_SKILLBUILDER;
 
+@SuppressWarnings("rawtypes")
 public abstract class Rectangle implements Comparable {
 	private double length;
 	private double width;
@@ -60,6 +61,35 @@ public abstract class Rectangle implements Comparable {
 		String rect;
 		rect = "Rectangle has a length of " + length + " and a width of " + width;
 		return rect;
+	}
+	
+	public int compareTo(Object rect) {
+		Rectangle testRectangle = (Rectangle)rect;
+		
+		if (width < testRectangle.getWidth() && length < testRectangle.getLength()) {
+			return -1;
+		}
+		else if (width == testRectangle.getWidth() && length == testRectangle.getLength()) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+	}
+	
+	public int compareToArea(Object areaRect) {
+		Rectangle testAreaRectangle = (Rectangle)areaRect;
+		
+		if (rectangleArea < testAreaRectangle.area()) {
+			return -1;
+		}
+		else if (rectangleArea < testAreaRectangle.area()) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+		
 	}
 
 }
