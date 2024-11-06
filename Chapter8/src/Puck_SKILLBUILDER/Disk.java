@@ -45,8 +45,7 @@ public class Disk extends Circle
 	{
 		String diskString;
 
-		diskString = "The disk has radius " + super.getRadius() +
-					 " and thickness " + thickness + ".";
+		diskString = "The disk has radius " + super.getRadius() + " and thickness " + thickness + ".";
 	 	return(diskString);
 	}
 

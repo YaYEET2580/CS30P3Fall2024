@@ -1,9 +1,10 @@
 package Rectangle_SKILLBUILDER;
 
 @SuppressWarnings("rawtypes")
-public abstract class Rectangle implements Comparable {
+public class Rectangle implements Comparable {
 	private double length;
 	private double width;
+	private double rectangleArea;
 
 
 	public Rectangle() {
@@ -33,7 +34,6 @@ public abstract class Rectangle implements Comparable {
 	}
 	
 	public double area() {
-		double rectangleArea;
 		rectangleArea = length * width;
 		return rectangleArea;
 	}
@@ -78,5 +78,18 @@ public abstract class Rectangle implements Comparable {
 		}
 	}
 	
+	public int compareToArea(Object rectArea) {
+		Rectangle testRectangle = (Rectangle)rectArea;
+		
+		if (rectangleArea < testRectangle.area()) {
+			return -1;
+		}
+		else if (rectangleArea < testRectangle.area()) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+	}
 
 }
