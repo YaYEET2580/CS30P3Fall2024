@@ -7,8 +7,7 @@ public class Stack3
 	private ArrayList<Object>data;
 	private int top;
 	
-	public Stack3()
-	{
+	public Stack3(){
 		data = new ArrayList<Object>();
 		top = -1;
 	}
