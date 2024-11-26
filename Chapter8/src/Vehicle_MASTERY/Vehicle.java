@@ -13,6 +13,19 @@ public abstract class Vehicle {
 		MSRP = P;
 	}
 	
+	public String getMake() {
+		return make;
+	}
+	
+	public String getModel() {
+		return model;
+	}
+	
+	public int getYear() {
+		return year;
+	}
+	
+	
 	public String toString() {
 		return("Year: " + year + " | " + "Make: " + make + " | " + "Model: " + model + " | " + "MSRP: $" + MSRP);
 	}
