@@ -25,9 +25,27 @@ public abstract class Vehicle {
 		return year;
 	}
 	
+	public double getMSRP() {
+		return MSRP;
+	}
+	
+	public void setMake(String ma) {
+		make = ma;
+	}
+	
+	public void setModel(String mo) {
+		model = mo;
+	}
+	
+	public void setYear(int y) {
+		year = y;
+	}
+	
+	public void setMSRP(double P) {
+		MSRP = P;
+	}
 	
 	public String toString() {
 		return("Year: " + year + " | " + "Make: " + make + " | " + "Model: " + model + " | " + "MSRP: $" + MSRP);
 	}
-
 }
