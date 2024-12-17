@@ -1,5 +1,5 @@
 package Move;
 
-public class Move1 {
+public class Move2 {
 
 }
